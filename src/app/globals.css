@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* src/app/globals.css */
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 :root {
   --background: #ffffff;
