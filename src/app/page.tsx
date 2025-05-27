@@ -1,16 +1,26 @@
-
 import PreEvents from '../components/PreEvents';
 import Footer from '../components/Footer';
 import Hero from '@/components/Hero';
+
 export default function Home() {
   return (
-    <main className="bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
-      <div className="hidden sm:block absolute inset-0 bg-[radial-gradient(circle_at_25%_30%,theme(colors.pink.900/10),transparent_35%)]" />
+    <main className="relative overflow-hidden">
+      <div className="fixed inset-0 z-0">
+        <img 
+          src="/images/bg.jpeg" 
+          alt="Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30"></div>
+        
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black/70 to-transparent"></div>
+      </div>
 
-      <div className="block sm:hidden absolute inset-0 bg-[radial-gradient(circle_at_5%_20%,theme(colors.pink.900/10),transparent_35%)]" />
-      <Hero/>
-      <PreEvents/>
-      <Footer />
+      <div className="relative z-10">
+        <Hero/>
+        <PreEvents/>
+        <Footer />
+      </div>
     </main>
   );
 }
