@@ -52,16 +52,23 @@ const Hero = () => {
     </AnimatedText>
 
     <AnimatedText delay={800}>
-      <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
 
-        <button className="group relative px-4 py-2 sm:px-8 sm:py-4 border-2 border-white/20 rounded-full font-semibold text-white text-lg hover:bg-white/5 transition-all duration-300 backdrop-blur-sm">
-          <span className="flex items-center gap-2">
-            <Users className="w-5 h-5 text-rose-400 group-hover:animate-pulse" />
-            Join Community
-          </span>
-        </button>
-      </div>
-    </AnimatedText>
+    <a
+      href="https://chat.whatsapp.com/IhiEwwzO2HRDzlh8oanFQs"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative px-4 py-2 sm:px-8 sm:py-4 border-2 border-white/20 rounded-full font-semibold text-white text-lg hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
+    >
+      <span className="flex items-center gap-2">
+        <Users className="w-5 h-5 text-rose-400 group-hover:animate-pulse" />
+        Join Community
+      </span>
+    </a>
+
+  </div>
+</AnimatedText>
+
 
     <AnimatedText delay={1000}>
           <div className="mt-10 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
