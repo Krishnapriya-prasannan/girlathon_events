@@ -32,7 +32,7 @@ const Hero = () => {
         <AnimatedText delay={200}>
       <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 mb-8 mt-6">
         <Sparkles className="w-5 h-5 text-rose-400 animate-pulse" />
-        <span className="text-slate-300 font-medium">Pre-Events Series 2025</span>
+        <span className="text-slate-200 font-semibold text-lg">Pre-Events Series 2025</span>
       </div>
     </AnimatedText>
 
