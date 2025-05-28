@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="Footer-Top">
         <a href="#">
           <img
-  src="/images/GDSCfooterbg.png"
+  src="/images/GDSCfooter.png"
   alt="GDSC logo"
   
 />
