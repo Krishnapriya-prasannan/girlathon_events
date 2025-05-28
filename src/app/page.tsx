@@ -10,7 +10,7 @@ export default function Home() {
   src="/images/bg.jpeg"
   alt="Background"
   
-  className="object-cover"
+  className="w-full h-full object-cover"
   
 />
         
