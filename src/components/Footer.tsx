@@ -1,11 +1,14 @@
 import "./Footer.css";
-
 export default function Footer() {
   return (
     <div className="Footer row" style={{ margin: "0px" }}>
       <div className="Footer-Top">
         <a href="#">
-          <img src="/images/GDSCfooter.png" alt="GDSC logo" />
+          <img
+  src="/images/GDSCfooterbg.png"
+  alt="GDSC logo"
+  
+/>
           <span>DSC MACE</span>
         </a>
         <p>Connect with Us</p>

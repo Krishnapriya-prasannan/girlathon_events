@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, MapPin, Users, ExternalLink, Star, Target, X } from 'lucide-react';
 import { AnimatedTextProps, Event, EventCardProps, CATEGORY_COLORS } from '@/app/types';
-
 // Events data
 const events: Event[] = [
   {
@@ -44,10 +43,14 @@ _#DSCMACE #ReforgeTheLegacy_`,
 const parseTimeOnDate = (dateStr: string, timeStr: string): Date => {
   // dateStr: "2025-05-27"
   // timeStr: "08:30 PM"
-  const [time, meridian] = timeStr.trim().split(' ');
-  let [hours, minutes] = time.split(':').map(Number);
-  if (meridian.toUpperCase() === 'PM' && hours !== 12) hours += 12;
-  if (meridian.toUpperCase() === 'AM' && hours === 12) hours = 0;
+    const [time, meridian] = timeStr.trim().split(' ');
+
+  const [rawHours, minutes] = time.split(':').map(Number);
+let hours = rawHours;
+if (meridian.toUpperCase() === 'PM' && hours !== 12) hours += 12;
+if (meridian.toUpperCase() === 'AM' && hours === 12) hours = 0;
+
+
   const [year, month, day] = dateStr.split('-').map(Number);
   return new Date(year, month - 1, day, hours, minutes);
 };
@@ -87,6 +90,8 @@ const AnimatedText = ({ children, className = "", delay = 0 }: AnimatedTextProps
 
 // Event Detail Modal Component
 const EventModal = ({ event, isOpen, onClose }: { event: Event; isOpen: boolean; onClose: () => void }) => {
+  const [imageWidth, setImageWidth] = useState<number | null>(null);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -120,7 +125,6 @@ const EventModal = ({ event, isOpen, onClose }: { event: Event; isOpen: boolean;
     ongoing: 'bg-green-500 text-white',
     ended: 'bg-gray-500 text-white',
   };
-const [imageWidth, setImageWidth] = useState<number | null>(null);
 
 const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
   const img = e.currentTarget;
@@ -154,6 +158,7 @@ const modalStyle = imageWidth
 <div className="flex flex-col md:flex-row h-full w-full">
           {/* Image Section */}
           <div className="relative md:w-1/2 h-64 md:h-auto">
+
             <img
   src={event.poster}
   alt={event.title}
@@ -354,7 +359,6 @@ const EventCard = ({ event, index, onCardClick }: EventCardProps & { onCardClick
 
 const PreEvents = () => {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const today = new Date();
   const upcomingEvents = events.filter(event => getEventStatus(event) !== 'ended');
 
   const handleCardClick = (event: Event) => {
