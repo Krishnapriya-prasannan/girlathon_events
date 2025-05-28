@@ -224,6 +224,8 @@ const modalStyle = imageWidth
                   {event.description}
                 </div>
               </div>
+{eventStatus !== 'ended' && (
+  
 
               <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
                 <button className="group/btn w-full px-6 py-4 bg-gradient-to-r from-rose-500/20 to-purple-500/20 hover:from-rose-500 hover:to-purple-500 border border-rose-500/30 hover:border-transparent rounded-xl text-white font-medium transition-all duration-300 flex items-center justify-center gap-2">
@@ -231,6 +233,7 @@ const modalStyle = imageWidth
                   <ExternalLink className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                 </button>
               </a>
+)}
             </div>
           </div>
         </div>
@@ -340,7 +343,8 @@ const EventCard = ({ event, index, onCardClick }: EventCardProps & { onCardClick
         <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
           {event.description}
         </p>
-
+{eventStatus !== 'ended' && (
+  
         <a 
           href={event.registrationLink} 
           target="_blank" 
@@ -352,6 +356,7 @@ const EventCard = ({ event, index, onCardClick }: EventCardProps & { onCardClick
             <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
           </button>
         </a>
+)}
       </div>
     </div>
   );
